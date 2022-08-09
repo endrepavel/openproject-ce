@@ -15,8 +15,8 @@ fi
 
 dbhost=$(ruby -ruri -e 'puts URI(ENV.fetch("DATABASE_URL")).host')
 pwfile=$(mktemp)
-chown postgres $pwfile
 echo "$PGPASSWORD" > $pwfile
+chown postgres $pwfile
 
 PLUGIN_GEMFILE_TMP=$(mktemp)
 PLUGIN_GEMFILE=/usr/src/app/Gemfile.local
